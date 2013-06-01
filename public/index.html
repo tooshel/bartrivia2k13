@@ -256,11 +256,15 @@ function linkify( selector ) {
 			self.css("color", "red");
 
 			var data = 	{	question:self.data("question"),
-							answer:self.data("answer"),
-							team:GLOBALuserName
+							guess:self.data("answer"),
+							name:GLOBALuserName
 						};
 
 			console.log(data);
+
+			
+			
+			socket.emit("playerGuess", data);
 
 
 		});
